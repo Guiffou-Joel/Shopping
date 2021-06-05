@@ -35,6 +35,7 @@ class DbHelper{
     );
     return id;
   }
+
   Future<int> insertItem(Listitem item) async{
     int id = await this.db.insert(
       'items',
@@ -42,6 +43,17 @@ class DbHelper{
       conflictAlgorithm: ConflictAlgorithm.replace,
     );
     return id;
+  }
+
+  Future<List<ShoppingList>> getLists() async{
+    final List<Map<String, dynamic>> maps = await db.query("lists");
+    return List.generate(maps.length, (i){
+      return ShoppingList(
+          maps[i]['id'],
+          maps[i]['name'],
+          maps[i]['priority'],
+      );
+    });
   }
 
   Future tesdDb() async{
