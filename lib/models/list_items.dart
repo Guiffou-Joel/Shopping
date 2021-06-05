@@ -5,7 +5,7 @@ class Listitem{
   String quantity;
   String note;
 
-  Listitem(this.id, this.idList, this.name, this.quantity, this.note);
+  Listitem(this.id, this.idList, this.name, this.note, this.quantity);
 
   Map<String, dynamic> toMap(){
     return {
