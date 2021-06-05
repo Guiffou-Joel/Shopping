@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     DbHelper helper = DbHelper();
-    helper.tesdDb();
+    // helper.tesdDb();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Shopping List',
@@ -20,3 +20,16 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+class ShList extends StatefulWidget {
+  @override
+  _ShListState createState() => _ShListState();
+}
+
+class _ShListState extends State<ShList> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
