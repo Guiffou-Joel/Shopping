@@ -42,6 +42,13 @@ class _ShListState extends State<ShList> {
       itemBuilder: (BuildContext context, int index){
         return ListTile(
           title: Text(shoppingList[index].name),
+          leading: CircleAvatar(
+            child: Text(shoppingList[index].priority.toString()),
+          ),
+          trailing: IconButton(
+            icon: Icon(Icons.edit),
+            onPressed: (){},
+          ),
         );
       },
     );
