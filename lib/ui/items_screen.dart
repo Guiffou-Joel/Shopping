@@ -23,7 +23,20 @@ class _ItemsScreenState extends State<ItemsScreen> {
       appBar: AppBar(
         title: Text(shoppingList.name),
       ),
-      body: Container(),
+      body: ListView.builder(
+        itemCount: (items != null)? items.length : 0,
+        itemBuilder: (BuildContext context, int index){
+          return ListTile(
+            title: Text(items[index].name),
+            subtitle: Text("Quantity: ${items[index].quantity} - Note: ${items[index].note}"),
+            onTap: (){},
+            trailing: IconButton(
+              icon: Icon(Icons.edit),
+              onPressed: (){},
+            ),
+          );
+        },
+      ),
     );
   }
 
