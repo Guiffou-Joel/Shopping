@@ -80,6 +80,15 @@ class DbHelper{
     });
   }
 
+  Future<int> deleteList(ShoppingList list) async{
+    int result = await db.delete(
+      "items",
+      where: "idList = ?",
+      whereArgs: [list.id],
+    );
+    return result;
+  }
+
   Future tesdDb() async{
     db = await openDb();
     await db.execute('INSERT INTO lists VALUES (5, "Fruit", 2)');
